@@ -1,0 +1,10 @@
+<h1>Posts</h1>
+<a href="/">Go to index</a>
+
+<ul>
+  <% @posts.each do |post| %>
+      <li><%= post.title %></li>
+      <li><%= post.text %></li>
+      <br>
+  <% end %>
+</ul>
