@@ -1,0 +1,12 @@
+<div>
+  <a href="<%= root_url %>">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <% if !current_user %>
+    <a href="<%= new_user_url %>">Registration</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="<%= new_session_url %>">Sign in</a>
+  <% else %>
+    <%= user_email %> <a href="/sessions/destroy" data-method="delete">Exit</a>
+      <% #link_to "Profile", {controller: "users", action: "destroy" , id: "1"}, method: :delete, class: 'del' %>
+  <% end %>
+
+</div>
