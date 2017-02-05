@@ -1,7 +1,4 @@
 class UsersController < ApplicationController
-  def new
-    render :new
-  end
 
   def create
     user = User.new(person_params)
