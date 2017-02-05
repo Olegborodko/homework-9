@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :posts
   resources :sessions
 
+  get 'users/:id/posts', to: 'posts#users_posts', as: :users_posts
+
 end

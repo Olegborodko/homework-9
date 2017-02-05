@@ -12,9 +12,11 @@ class SessionsController < ApplicationController
         session[:user_id] = user.rid
         redirect_to root_url
       else
+        flash.now[:error] = "not correct password or email"
         render 'new'
       end
     else
+      flash.now[:error] = "not correct password or email"
       render 'new'
     end
   end

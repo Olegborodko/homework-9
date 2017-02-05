@@ -1,12 +1,14 @@
 <div>
-  <a href="<%= root_url %>">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="margin_right_10" href="<%= root_url %>">Home</a>
 
-  <% if !current_user %>
-    <a href="<%= new_user_url %>">Registration</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="<%= new_session_url %>">Sign in</a>
+  <% if !current_user_check %>
+    <a class="margin_right_10" href="<%= new_user_url %>">Registration</a>
+    <a class="margin_right_10" href="<%= new_session_url %>">Sign in</a>
   <% else %>
-    <%= user_email %> <a href="/sessions/destroy" data-method="delete">Exit</a>
-      <% #link_to "Profile", {controller: "users", action: "destroy" , id: "1"}, method: :delete, class: 'del' %>
+    <a class="margin_right_10" href="<%= new_post_url %>">Add new post</a>
+    <a class="margin_right_10" href="<%= users_posts_url(user_self.id) %>">My Posts</a>
+    <span class="margin_right_10"><%= user_email %></span>
+    <%= link_to "Exit", {controller: "sessions", action: "destroy" , id: "self"}, method: :delete, class: 'del' %>
   <% end %>
 
 </div>

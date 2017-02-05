@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_secure_password
+  has_secure_password  # validation presence true
 	has_secure_token :rid
 
 	has_many :posts, dependent: :destroy

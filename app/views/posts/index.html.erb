@@ -1,8 +1,7 @@
-<%= render partial: "part/user_panel" %>
 <h1>Posts</h1>
 <ul>
   <% @posts.each do |post| %>
-      <li><a href=""><%= post.title %></a>
+      <li><a href="<%= post_url(post.id) %>"><%= post.title %></a>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <%= "#{post.text[0..5]}..." %>
       </li>

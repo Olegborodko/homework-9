@@ -25,7 +25,10 @@
         <%= msg %>
       <% end %>
     <% end %>
-    <%= yield %>
+    <%= render partial: "part/user_panel" %>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <%= yield %>
+    </div>
   </div>
 </body>
 </html>
