@@ -1,14 +1,14 @@
- <h1><%= @post.title %></h1>
+<h1><%= @post.title %></h1>
 
-  <p class="bg-warning padding_10">
+<p class="bg-warning padding_10">
   <%= @post.text %>
-  </p>
+</p>
 
-  <p class="text-success bg-primary padding_10">
+<p class="text-success bg-primary padding_10">
   <%= @post.user.email %>
-  </p>
+</p>
 
-  <% if @delete %>
-   <%= link_to "Delete Post", post_url(@post.id), method: :delete,  class: "btn btn-default button_simulation", data: { confirm: 'Are you sure?' }  %>
-  <% end %>
+<% if @delete %>
+    <%= link_to "Delete Post", post_url(@post.id), method: :delete,  class: "btn btn-default button_simulation", data: { confirm: 'Are you sure?' }  %>
+<% end %>
 
