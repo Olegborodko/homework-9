@@ -13,7 +13,7 @@ describe SessionsController do
 
   it "create" do
     session[:user_id] = nil
-    post :create, {email: @user.email, password_digest: @user.password}
+    post :create, params: {email: @user.email, password_digest: @user.password}
 
     user = User.find_by rid: session[:user_id]
     expect(user.email).to eq(@user.email)
@@ -23,9 +23,10 @@ describe SessionsController do
   end
 
   it "destroy" do
-    delete :destroy, {id: 'self'}
+    delete :destroy, params: {id: 'self'}
     expect(session[:user_id]).to eq(nil)
     expect(response).to redirect_to(root_url)
   end
 
 end
+

@@ -9,6 +9,9 @@
 </p>
 
 <% if @delete %>
-    <%= link_to "Delete Post", post_url(@post.id), method: :delete,  class: "btn btn-default button_simulation", data: { confirm: 'Are you sure?' }  %>
+    <%# link_to "Delete Post", post_url(@post.id), method: :delete,  class: "btn btn-default button_simulation", data: { confirm: 'Are you sure?' }  %>
+    <%= form_for(@post, :html => { method: :delete}, data: { confirm: 'Are you sure?' }) do |f| %>
+        <%= f.submit "Delete Post", class: "btn, btn-default" %>
+    <% end %>
 <% end %>
 
